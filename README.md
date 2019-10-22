@@ -9,7 +9,7 @@ go build
 
 ## Run
 ```
-./go-files-folders
+./go-cronjob
 ```
 
 ---
