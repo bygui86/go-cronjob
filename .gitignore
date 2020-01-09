@@ -30,8 +30,6 @@ Thumbs.db
 
 ###################### IDE configurations #######
 
-########### GoLand
-
 ########### Visual Studio Code
 .vscode
 *.code-workspace
@@ -59,3 +57,4 @@ Thumbs.db
 ########### Project specific
 vendor/*
 !vendor/.gitkeep
+go-cronjob

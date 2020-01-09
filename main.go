@@ -12,10 +12,10 @@ import (
 
 func main() {
 	cronjob := cron.New()
-	cronjob.AddFunc("@every 30s", job())
+	cronjob.AddFunc("@every 5s", job)
 	cronjob.Start()
 
-	fmt.Printf("CronJob entries: %v\n", cronjob.Entries())
+	fmt.Printf("CronJob entries: %d\n", len(cronjob.Entries()))
 
 	syscallCh := make(chan os.Signal)
 	signal.Notify(syscallCh, syscall.SIGTERM, syscall.SIGINT, os.Interrupt)
@@ -25,9 +25,8 @@ func main() {
 	cronjob.Stop()
 }
 
-func job() func() {
-	return func() {
-		fmt.Println("CronJob execution")
-		time.Sleep(5 * time.Second)
-	}
+func job() {
+	fmt.Println("CronJob execution started")
+	time.Sleep(3 * time.Second)
+	fmt.Println("CronJob execution completed")
 }
