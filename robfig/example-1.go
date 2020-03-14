@@ -6,8 +6,8 @@ import (
 	"os/signal"
 	"syscall"
 	"time"
-
-	"github.com/robfig/cron"
+	
+	"github.com/robfig/cron/v3"
 )
 
 func main() {
